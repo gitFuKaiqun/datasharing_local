@@ -1,0 +1,126 @@
+{% extends "base.html" %} {% block content %}
+<script>
+function redirectURL() {
+    var InACI;
+    InACI = document.getElementById("acisa").value;
+    var listing = InACI.split(',');
+    for (var i = 0; i < listing.length; i++) {
+        if (TargetACISAs.indexOf(listing[i]) < 0){
+            IlliList.push(listing[i]);
+        }
+    }
+    if (IlliList.length > 0) {
+        alert("ACISA Nunmbers: '" + IlliList.join() + "' illegal, please double check.");
+        for (var i = 0; i < IlliList.length; i++){
+            selectedACISAs.splice(selectedACISAs.indexOf(IlliList[i]), 1);
+        }
+        IlliList = [];
+        document.getElementById("acisa").value = selectedACISAs.join();
+        return;
+    }
+    var TRange;
+    TRange = document.getElementById("reservationtime").value;
+    var returningStr;
+    returningStr = "report?TRange=" + TRange;
+    if (document.getElementById("acisa").value != "") {
+        returningStr += "&acisa=" + document.getElementById("acisa").value;
+    }
+    window.location = returningStr;
+}
+
+function redirectURL_inc() {
+    var jsvar1;
+    var jsvar2;
+    var jsvar3;
+    jsvar1 = document.getElementById("start_time").value;
+    jsvar2 = document.getElementById("end_time").value;
+    jsvar3 = document.getElementById("key_word").value;
+    window.location = "Incidents/22stttm=" + jsvar1 + "&endtm=" + jsvar2 + "&kw=" + jsvar3;
+}
+
+</script>
+<h4 id="two">Data Downloading Options</h4>
+<div class="well">
+    <form class="form-horizontal">
+        <fieldset>
+            <div class="control-group">
+                <div class="controls">
+                    <div class="input-prepend input-group">
+                        <table>
+                            <thead>
+                                <th>Choose Start and End times:</th>
+                                <th>ACISA No.</th>
+                            </thead>
+                            <tbody>
+                                <td style="width: 350px">
+                                    <input type="text" style="width: 300px" name="reservation" id="reservationtime" class="form-control" value="08/01/2013 1:00 PM - 08/01/2013 1:30 PM" class="span4" />
+                                </td>
+                                <td style="width: 250px">
+                                    <input type="text" style="width: 200px" name="acisa" id="acisa" class="input-xlarge uneditable-input" value="" class="span3" onchange="Check()"/>
+                                </td>
+                                <td>
+                                    <button id="btn" class="btn btn-primary" type="button" href="#" onclick="redirectURL();">Download Data</button>
+                                </td>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $('#reservationtime').daterangepicker({
+            timePicker: true,
+            timePickerIncrement: 30,
+            format: 'MM/DD/YYYY h:mm A'
+        }, function(start, end) {
+            console.log(start.toISOString(), end.toISOString());
+        });
+    });
+    </script>
+</div>
+<h4>Map Viewer for ACISAs</h4>
+<div class="well">
+    <form class="form-horizontal">
+        <fieldset>
+            <div class="control-group">
+                <div class="controls">
+                    <div id="map-canvas"></div>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+</div>
+
+<h4>Who's that stumbling around in the dark? <b>State Your Business</b>:</h4>
+<div class="well" style="overflow: auto">
+    <form class="form-horizontal">
+        <div class="control-group">
+            <label class="control-label" for="inputUname">Name:</label>
+            <div class="controls">
+                <input type="text" id="inputUname" placeholder="Name">
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="inputAgency">Agency:</label>
+            <div class="controls">
+                <input type="text" id="inputAgency" placeholder="Agency">
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="inputComment">Comments:</label>
+            <div class="controls">
+                <textarea id="inputComment" rows="10" cols="100%"></textarea>
+            </div>
+        </div>
+        <div class="control-group">
+            <div class="controls">
+                <button id="btn_submit" type="submit" class="btn btn-primary" style="margin: 10px;">Submit</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+{% endblock %}
