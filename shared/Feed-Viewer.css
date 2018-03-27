@@ -3,45 +3,45 @@
  */
 
 .summary {
-     background-image: url(images/details.gif) !important;
+     background-image: url(https://raw.githubusercontent.com/kaichunf/datasharing_local/shared/images/details.gif) !important;
 }
 
 .reading {
-     background-image: url(images/article.gif) !important;
+     background-image: url(https://raw.githubusercontent.com/kaichunf/datasharing_local/shared/images/article.gif) !important;
 }
 
 .post-go {
-    background-image: url(images/post_go.gif) !important;
+    background-image: url(https://raw.githubusercontent.com/kaichunf/datasharing_local/shared/images/post_go.gif) !important;
 }
 
 .tab-new {
-    background-image: url(images/tab_new.gif) !important;
+    background-image: url(https://raw.githubusercontent.com/kaichunf/datasharing_local/shared/images/tab_new.gif) !important;
 }
 
 .feed-add {
-    background-image: url(images/rss_add.gif) !important;
+    background-image: url(https://raw.githubusercontent.com/kaichunf/datasharing_local/shared/images/rss_add.gif) !important;
 }
 
 .feed-remove {
-    background-image: url(images/rss_delete.gif) !important;
+    background-image: url(https://raw.githubusercontent.com/kaichunf/datasharing_local/shared/images/rss_delete.gif) !important;
 }
 
 .feed-load {
-    background-image: url(images/rss_load.gif) !important;
+    background-image: url(https://raw.githubusercontent.com/kaichunf/datasharing_local/shared/images/rss_load.gif) !important;
 }
 
 .details {
-    background-image: url(images/details.gif) !important;
+    background-image: url(https://raw.githubusercontent.com/kaichunf/datasharing_local/shared/images/details.gif) !important;
 }
 
 .open-all {
-    background-image: url(images/tabs.gif) !important;
+    background-image: url(https://raw.githubusercontent.com/kaichunf/datasharing_local/shared/images/tabs.gif) !important;
 }
 
 .feed {
     width: 16px;
     height: 16px;
-    background-image: url(images/rss.gif) !important;
+    background-image: url(https://raw.githubusercontent.com/kaichunf/datasharing_local/shared/images/rss.gif) !important;
 }
 
 /**
@@ -67,7 +67,7 @@
     font-size: 11px;
     line-height: 20px;
     cursor: pointer;
-    background: url(images/rss.gif) no-repeat 0 2px;
+    background: url(https://raw.githubusercontent.com/kaichunf/datasharing_local/shared/images/rss.gif) no-repeat 0 2px;
     border: 1px solid #fff;
 }
 
@@ -84,12 +84,12 @@
 
 .topic {
     padding: 2px 0 0 20px;
-    background:transparent url(images/post.gif) no-repeat;
+    background:transparent url(https://raw.githubusercontent.com/kaichunf/datasharing_local/shared/images/post.gif) no-repeat;
 }
 
 .x-rtl .topic {
     padding: 2px 20px 0 0;
-    background:transparent url(images/post.gif) no-repeat top right;
+    background:transparent url(https://raw.githubusercontent.com/kaichunf/datasharing_local/shared/images/post.gif) no-repeat top right;
 }
 
 .topic b {
